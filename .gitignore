@@ -1,0 +1,17 @@
+node_modules/
+.next/
+.env
+.env.local
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+/server/tmp/
+dist/
+build/
+.DS_Store
+*.log
+postgres_data/
