@@ -1,5 +1,11 @@
-import { HomeWidget } from "@/widgets/home-widget";
+import { HeroSection } from "@/widgets/hero-section";
+import { TeamSection } from "@/widgets/team-section";
 
 export default function HomePage() {
-  return <HomeWidget />;
+  return (
+    <>
+      <HeroSection />
+      <TeamSection />
+    </>
+  );
 }
