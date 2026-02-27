@@ -21,7 +21,7 @@ export function TeamSection() {
           Кто мы
         </p>
         <h2 className="text-3xl md:text-5xl font-black tracking-tight text-center mb-3 md:mb-4 text-black">
-          Наша Команда
+          Команда
         </h2>
         <div className="w-10 md:w-12 h-[2px] bg-black mx-auto mb-4 md:mb-6" />
         <p className="text-center text-black/50 font-bold mb-12 md:mb-16 text-sm md:text-base max-w-lg mx-auto px-2">

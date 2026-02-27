@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Команда",
+  description:
+    "Команда Oracle Studio — full-stack разработчики с опытом в React, Next.js, Go, Python, Telegram и Discord ботах.",
+  alternates: { canonical: "/team" },
+};
 
 const members = [
   {
@@ -27,25 +35,20 @@ const members = [
     avatar: "https://github.com/horr1ble171.png",
     role: "Full-stack Developer",
     portfolio: "https://horr1ble171.github.io/portfolio",
-    bio: "Разработчик Telegram ботов и сайтов. Полный цикл разработки от проектирования архитектуры до запуска проекта.",
+    bio: "Full-stack разработчик, специализируется на Telegram ботах и веб-приложениях. Полный цикл разработки от архитектуры до деплоя.",
     stacks: [
       {
         label: "Frontend",
         items: ["HTML", "CSS", "JavaScript"],
       },
       {
-        label: "Backend & API",
+        label: "Backend",
         items: ["Python", "Telegram API", "Aiogram"],
       },
       {
-        label: "Специализация",
-        items: ["Telegram боты", "Платежные системы", "Обработка аудио", "Базы данных"],
+        label: "Базы данных",
+        items: ["SQLite", "PostgreSQL"],
       },
-    ],
-    highlights: [
-      { value: "4+", label: "Проектов" },
-      { value: "1300+", label: "Пользователей" },
-      { value: "2+", label: "Года опыта" },
     ],
   },
 ];
@@ -65,7 +68,7 @@ export default function TeamPage() {
           Команда разработчиков, готовая воплотить ваши идеи в жизнь
         </p>
 
-        <div className="space-y-16 md:space-y-24">
+        <div className="space-y-12 md:space-y-16">
           {members.map((member) => (
             <article
               key={member.name}
@@ -119,20 +122,6 @@ export default function TeamPage() {
                     ))}
                   </div>
 
-                  {member.highlights && (
-                    <div className="flex gap-6 md:gap-10 pt-2">
-                      {member.highlights.map((h) => (
-                        <div key={h.label}>
-                          <p className="text-2xl md:text-3xl font-black text-black">
-                            {h.value}
-                          </p>
-                          <p className="text-[10px] md:text-xs font-bold text-black/40 uppercase tracking-widest">
-                            {h.label}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  )}
                 </div>
               </div>
             </article>
@@ -140,15 +129,12 @@ export default function TeamPage() {
         </div>
 
         <div className="text-center border-t border-black/10 mt-16 md:mt-24 pt-10">
-          <p className="text-black font-bold text-sm md:text-base">
-            Мы всегда рады рабочим рукам,
-          </p>
-          <p className="text-black/40 font-bold text-xs md:text-sm mt-1 mb-8">
-            но пока не готовы кого-то набирать
+          <p className="text-black/40 font-bold text-xs md:text-sm max-w-md mx-auto">
+            Мы всегда рады рабочим рукам, но пока не готовы кого-то набирать
           </p>
           <Link
             href="/"
-            className="inline-block text-xs font-bold uppercase tracking-widest text-black border-b-2 border-black pb-0.5 hover:text-black/60 hover:border-black/60 transition-colors"
+            className="inline-block mt-6 text-xs font-bold uppercase tracking-widest text-black border-b-2 border-black pb-0.5 hover:text-black/60 hover:border-black/60 transition-colors"
           >
             На главную
           </Link>

@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Проекты",
+  description:
+    "Проекты Oracle Studio: Discord боты, веб-приложения и Telegram боты. Смотрите наши реализованные продукты.",
+  alternates: { canonical: "/projects" },
+};
 
 const projects = [
   {
