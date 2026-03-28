@@ -69,9 +69,9 @@ export function Header() {
             <div className="relative flex items-center justify-between gap-3 rounded-full border border-black/[0.07] bg-[#f5f5f5] px-5 py-2.5 shadow-[0_6px_28px_rgba(0,0,0,0.07)] md:gap-6 md:px-8 md:py-3">
               <Link
                 href="/"
-                className="font-display shrink-0 text-lg font-extrabold leading-none tracking-tight md:text-xl"
+                className="font-display min-w-0 max-w-[calc(100%-3.25rem)] shrink text-[clamp(0.8125rem,4vw,1.125rem)] font-extrabold leading-none tracking-tight md:max-w-none md:shrink-0 md:text-xl"
               >
-                <span className="text-gradient">ORACLE</span>
+                <span className="text-gradient isolate block text-left">ORACLE</span>
               </Link>
 
               <button

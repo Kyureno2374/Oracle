@@ -18,19 +18,21 @@ const HeroAbstractModel = dynamic(
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-oracle-bg pt-28 md:pt-32">
+    <section className="relative min-h-screen overflow-x-hidden bg-oracle-bg pt-28 md:pt-32">
       <div className="mesh-bg pointer-events-none absolute inset-0" />
       <div className="grid-fade pointer-events-none absolute inset-0 opacity-90" />
 
       <div className="relative mx-auto flex min-h-[calc(100svh-8.25rem)] max-w-7xl flex-col items-center justify-center gap-12 px-5 py-10 md:min-h-[calc(100svh-9rem)] md:flex-row md:items-center md:justify-between md:gap-10 md:px-8 md:py-14 lg:gap-16">
-        <div className="w-full max-w-xl text-center md:max-w-none md:flex-1 md:text-left">
+        <div className="w-full min-w-0 max-w-xl text-center md:max-w-none md:min-w-0 md:flex-[1.08] md:pl-[calc((min(100vw,80rem)-min(100vw,72rem))*0.5+1.5rem)] md:text-left lg:flex-[1.12]">
           <p className="mb-4 text-[0.65rem] font-bold uppercase tracking-[0.35em] text-zinc-500 md:mb-5 md:text-xs">
             Веб-студия
           </p>
 
-          <h1 className="font-display text-[3.25rem] font-extrabold leading-[0.92] tracking-tight text-zinc-900 md:text-[clamp(3.5rem,8vw,6.5rem)]">
-            <span className="text-gradient">ORACLE</span>
-            <span className="mt-1 block text-[1.65rem] font-bold tracking-tight text-zinc-600 md:mt-2 md:text-[clamp(2rem,4vw,3.25rem)]">
+          <h1 className="font-display w-full max-w-full text-[clamp(1.85rem,8.5vw,3.25rem)] font-extrabold leading-[0.92] tracking-normal text-zinc-900 md:max-w-full md:text-[clamp(2.35rem,calc(1.1rem+3.75vw),4.35rem)] md:tracking-tight lg:text-[clamp(2.6rem,calc(1rem+3.1vw),5rem)]">
+            <span className="text-gradient isolate block w-full max-w-full text-center md:text-left">
+              ORACLE
+            </span>
+            <span className="mt-1 block w-full max-w-full text-center text-[clamp(1.1rem,4.2vw,1.65rem)] font-bold tracking-tight text-zinc-600 md:mt-2 md:text-left md:text-[clamp(1.25rem,calc(0.7rem+1.6vw),2.35rem)] lg:text-[clamp(1.35rem,calc(0.65rem+1.35vw),2.65rem)]">
               STUDIO
             </span>
           </h1>
@@ -65,7 +67,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="w-full max-w-md shrink-0 md:max-w-none md:flex-1 md:pl-4">
+        <div className="w-full min-w-0 max-w-md shrink-0 md:max-w-none md:flex-[0.92] md:pl-4 lg:flex-[0.88]">
           <HeroAbstractModel />
         </div>
       </div>
