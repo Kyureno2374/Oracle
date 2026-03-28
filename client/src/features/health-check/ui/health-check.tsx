@@ -26,7 +26,11 @@ export function HealthCheck() {
         {loading ? "Проверка..." : "Проверить API"}
       </Button>
       {status && (
-        <p className={`text-sm ${status.startsWith("✓") ? "text-green-600" : "text-red-600"}`}>
+        <p
+          className={`text-sm font-medium ${
+            status.startsWith("✓") ? "text-emerald-600" : "text-red-600"
+          }`}
+        >
           {status}
         </p>
       )}

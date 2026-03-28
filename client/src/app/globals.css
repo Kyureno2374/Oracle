@@ -1,13 +1,163 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  body {
-    font-family: 'Inter', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  :root {
+    --oracle-bg: #fafafa;
+    --oracle-surface: #f4f4f5;
+    --oracle-elevated: #ffffff;
+    --oracle-border: rgba(0, 0, 0, 0.08);
+    --oracle-selection: rgba(37, 99, 235, 0.18);
+    --scrollbar-track: var(--oracle-bg);
+    --scrollbar-thumb: #171717;
   }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  html {
+    overflow-y: auto;
+  }
+
+  body {
+    background-color: var(--oracle-bg);
+    @apply font-sans text-zinc-900 antialiased;
+    scrollbar-gutter: stable;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 9999px;
+    border: 2px solid var(--scrollbar-track);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: #0a0a0a;
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: var(--scrollbar-track);
+  }
+
+  ::selection {
+    background-color: var(--oracle-selection);
+    @apply text-zinc-900;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-zinc-900 via-zinc-700 to-zinc-500;
+  }
+
+  .glow-line {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 0, 0, 0.2),
+      transparent
+    );
+  }
+
+  .mesh-bg {
+    background:
+      radial-gradient(ellipse 100% 80% at 50% -30%, rgba(59, 130, 246, 0.14), transparent 55%),
+      radial-gradient(ellipse 60% 50% at 100% 0%, rgba(0, 0, 0, 0.04), transparent 45%),
+      radial-gradient(ellipse 50% 40% at 0% 100%, rgba(59, 130, 246, 0.06), transparent 50%);
+  }
+
+  .grid-fade {
+    background-size: 48px 48px;
+    background-image:
+      linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 100%);
+  }
+
+  .perspective-dramatic {
+    perspective: 1200px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0) translateZ(0);
+  }
+  50% {
+    transform: translateY(-14px) translateZ(8px);
+  }
+}
+
+@keyframes spin-3d {
+  from {
+    transform: rotateX(18deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(18deg) rotateY(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float-y {
+  animation: float-y 5s ease-in-out infinite;
+}
+
+.animate-spin-3d {
+  animation: spin-3d 28s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: page-enter 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
 }

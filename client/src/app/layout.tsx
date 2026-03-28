@@ -1,5 +1,20 @@
 import type { Metadata } from "next";
+import { Plus_Jakarta_Sans, Syne } from "next/font/google";
+import { SmoothScroll } from "@/shared/ui/smooth-scroll";
+import "lenis/dist/lenis.css";
 import "./globals.css";
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin", "latin-ext", "cyrillic-ext"],
+  variable: "--font-jakarta",
+  display: "swap",
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+  display: "swap",
+});
 
 const SITE_URL = "https://oracle-studio.ru";
 
@@ -10,15 +25,15 @@ export const metadata: Metadata = {
     template: "%s | Oracle Studio",
   },
   description:
-    "Студия веб-разработки полного цикла. Создаём сайты, Telegram и Discord ботов. От идеи до продакшена.",
+    "Студия веб-разработки полного цикла. Создаём сайты, Телеграм и Дискорд ботов. От идеи до продакшена.",
   keywords: [
     "веб-разработка",
     "создание сайтов",
     "разработка сайтов",
     "веб-студия",
     "Oracle Studio",
-    "Telegram боты",
-    "Discord боты",
+    "Телеграм боты",
+    "Дискорд боты",
     "разработка под ключ",
     "фронтенд",
     "бэкенд",
@@ -49,13 +64,13 @@ export const metadata: Metadata = {
     siteName: "Oracle Studio",
     title: "Oracle Studio — веб-разработка под ключ",
     description:
-      "Студия веб-разработки полного цикла. Сайты, Telegram и Discord боты.",
+      "Студия веб-разработки полного цикла. Сайты, Телеграм и Дискорд боты.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Oracle Studio — веб-разработка под ключ",
     description:
-      "Студия веб-разработки полного цикла. Сайты, Telegram и Discord боты.",
+      "Студия веб-разработки полного цикла. Сайты, Телеграм и Дискорд боты.",
   },
   alternates: {
     canonical: SITE_URL,
@@ -72,8 +87,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru">
-      <body className="bg-white text-black">{children}</body>
+    <html lang="ru" className={`${jakarta.variable} ${syne.variable}`}>
+      <body className="min-h-screen bg-oracle-bg text-zinc-900">
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }

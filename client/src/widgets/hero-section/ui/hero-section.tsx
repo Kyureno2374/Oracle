@@ -1,43 +1,73 @@
+"use client";
+
+import dynamic from "next/dynamic";
+
+const HeroAbstractModel = dynamic(
+  () =>
+    import("@/shared/ui/hero-abstract-model").then((mod) => mod.HeroAbstractModel),
+  {
+    ssr: false,
+    loading: () => (
+      <div
+        className="mx-auto aspect-square w-full max-w-[340px] animate-pulse rounded-3xl bg-zinc-200/60 ring-1 ring-zinc-300/80 md:w-[380px] md:max-w-[380px]"
+        aria-hidden
+      />
+    ),
+  },
+);
+
 export function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-5 md:px-8 pt-20 md:pt-0">
-      <div className="max-w-5xl w-full text-center">
-        <p className="text-xs md:text-sm font-bold uppercase tracking-[0.3em] text-black/40 mb-4 md:mb-6">
-          Веб-студия
-        </p>
+    <section className="relative min-h-screen overflow-hidden bg-oracle-bg pt-28 md:pt-32">
+      <div className="mesh-bg pointer-events-none absolute inset-0" />
+      <div className="grid-fade pointer-events-none absolute inset-0 opacity-90" />
 
-        <h1 className="text-[3.5rem] md:text-[7rem] leading-[0.9] font-black tracking-tighter text-black mb-6 md:mb-8">
-          ORACLE
-          <span className="block text-[1.75rem] md:text-[3.5rem] font-bold tracking-tight mt-1 md:mt-2">
-            STUDIO
-          </span>
-        </h1>
+      <div className="relative mx-auto flex min-h-[calc(100svh-8.25rem)] max-w-7xl flex-col items-center justify-center gap-12 px-5 py-10 md:min-h-[calc(100svh-9rem)] md:flex-row md:items-center md:justify-between md:gap-10 md:px-8 md:py-14 lg:gap-16">
+        <div className="w-full max-w-xl text-center md:max-w-none md:flex-1 md:text-left">
+          <p className="mb-4 text-[0.65rem] font-bold uppercase tracking-[0.35em] text-zinc-500 md:mb-5 md:text-xs">
+            Веб-студия
+          </p>
 
-        <div className="w-10 md:w-16 h-[2px] bg-black mx-auto mb-6 md:mb-8" />
+          <h1 className="font-display text-[3.25rem] font-extrabold leading-[0.92] tracking-tight text-zinc-900 md:text-[clamp(3.5rem,8vw,6.5rem)]">
+            <span className="text-gradient">ORACLE</span>
+            <span className="mt-1 block text-[1.65rem] font-bold tracking-tight text-zinc-600 md:mt-2 md:text-[clamp(2rem,4vw,3.25rem)]">
+              STUDIO
+            </span>
+          </h1>
 
-        <p className="text-base md:text-xl font-bold text-black max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed px-2">
-          Создаем цифровые продукты от идеи до реализации.
-          <br className="hidden md:block" />
-          <span className="md:hidden"> </span>
-          Веб-сайты, Telegram и Discord боты, полный цикл разработки.
-        </p>
+          <div className="mx-auto mt-6 h-px w-16 glow-line md:mx-0 md:mt-8 md:w-20" />
 
-        <div className="flex flex-col md:flex-row justify-center items-center gap-3 md:gap-12 text-xs md:text-sm font-bold uppercase tracking-widest text-black/50 mb-10 md:mb-14">
-          <span>Веб-сайты</span>
-          <span className="hidden md:inline text-black/20">/</span>
-          <span>Telegram боты</span>
-          <span className="hidden md:inline text-black/20">/</span>
-          <span>Discord боты</span>
+          <p className="mx-auto mt-6 max-w-md text-base font-semibold leading-relaxed text-zinc-600 md:mx-0 md:mt-8 md:max-w-lg md:text-lg">
+            Создаём цифровые продукты от идеи до реализации.
+            <br className="hidden md:block" />
+            <span className="md:hidden"> </span>
+            Веб-сайты, Телеграм и Дискорд боты, полный цикл разработки.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-zinc-500 md:mt-10 md:justify-start md:gap-x-6 md:text-xs">
+            <span className="text-zinc-600">Веб-сайты</span>
+            <span className="hidden text-zinc-400 md:inline">/</span>
+            <span className="text-zinc-600">Телеграм боты</span>
+            <span className="hidden text-zinc-400 md:inline">/</span>
+            <span className="text-zinc-600">Дискорд боты</span>
+          </div>
+
+          <div className="mt-10 flex justify-center md:mt-12 md:justify-start">
+            <a
+              href="https://t.me/kyurenodev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-zinc-900 px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition-shadow duration-400 hover:shadow-glow-sm"
+            >
+              <span className="relative z-10">Обсудить проект</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-400/25 to-blue-500/0 opacity-0 transition-opacity duration-400 group-hover:opacity-100" />
+            </a>
+          </div>
         </div>
 
-        <a
-          href="https://t.me/kyurenodev"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block text-xs md:text-sm font-bold uppercase tracking-widest text-white bg-black px-8 py-4 hover:bg-black/80 transition-colors"
-        >
-          Обсудить проект
-        </a>
+        <div className="w-full max-w-md shrink-0 md:max-w-none md:flex-1 md:pl-4">
+          <HeroAbstractModel />
+        </div>
       </div>
     </section>
   );

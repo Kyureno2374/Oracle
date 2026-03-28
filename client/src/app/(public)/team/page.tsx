@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Команда",
   description:
-    "Команда Oracle Studio — full-stack разработчики с опытом в React, Next.js, Go, Python, Telegram и Discord ботах.",
+    "Команда Oracle Studio — full-stack разработчики с опытом в React, Next.js, Go, Python, Телеграм и Дискорд ботах.",
   alternates: { canonical: "/team" },
 };
 
@@ -35,7 +35,7 @@ const members = [
     avatar: "https://github.com/horr1ble171.png",
     role: "Full-stack Developer",
     portfolio: "https://horr1ble171.github.io/portfolio",
-    bio: "Full-stack разработчик, специализируется на Telegram ботах и веб-приложениях. Полный цикл разработки от архитектуры до деплоя.",
+    bio: "Full-stack разработчик, специализируется на Телеграм ботах и веб-приложениях. Полный цикл разработки от архитектуры до деплоя.",
     stacks: [
       {
         label: "Frontend",
@@ -43,7 +43,7 @@ const members = [
       },
       {
         label: "Backend",
-        items: ["Python", "Telegram API", "Aiogram"],
+        items: ["Python", "Телеграм API", "Aiogram"],
       },
       {
         label: "Базы данных",
@@ -55,64 +55,70 @@ const members = [
 
 export default function TeamPage() {
   return (
-    <div className="min-h-screen bg-white pt-28 md:pt-36 pb-16 md:pb-24 px-5 md:px-8">
-      <div className="max-w-5xl mx-auto">
-        <p className="text-xs md:text-sm font-bold uppercase tracking-[0.3em] text-black/40 text-center mb-3 md:mb-4">
+    <div className="relative min-h-screen overflow-hidden bg-oracle-bg px-5 pb-20 pt-32 md:px-8 md:pb-28 md:pt-40">
+      <div className="pointer-events-none absolute inset-0 mesh-bg opacity-50" />
+      <div className="pointer-events-none absolute inset-0 grid-fade opacity-40" />
+
+      <div className="relative mx-auto max-w-5xl">
+        <p className="mb-3 text-center text-[0.65rem] font-bold uppercase tracking-[0.35em] text-zinc-500 md:mb-4 md:text-xs">
           Кто мы
         </p>
-        <h1 className="text-4xl md:text-6xl font-black tracking-tight text-center text-black mb-3 md:mb-4">
+        <h1 className="text-center text-4xl font-extrabold tracking-tight text-zinc-900 md:text-6xl">
           Команда
         </h1>
-        <div className="w-10 md:w-16 h-[2px] bg-black mx-auto mb-6 md:mb-8" />
-        <p className="text-center text-black/50 font-bold text-sm md:text-base max-w-lg mx-auto mb-16 md:mb-24">
+        <div className="mx-auto mt-4 h-px w-14 glow-line md:mt-5 md:w-16" />
+        <p className="mx-auto mt-6 max-w-lg text-center text-sm font-semibold text-zinc-600 md:mt-8 md:text-base">
           Команда разработчиков, готовая воплотить ваши идеи в жизнь
         </p>
 
-        <div className="space-y-12 md:space-y-16">
+        <div className="mt-16 space-y-12 md:mt-24 md:space-y-20">
           {members.map((member) => (
             <article
               key={member.name}
-              className="border-t border-black/10 pt-10 md:pt-14"
+              className="group relative rounded-3xl border border-black/[0.08] bg-oracle-elevated p-8 shadow-card backdrop-blur-sm transition-all duration-500 hover:border-black/[0.12] hover:shadow-card-hover md:p-10"
             >
-              <div className="flex flex-col md:flex-row gap-8 md:gap-14">
-                <div className="flex flex-col items-center md:items-start shrink-0">
-                  <img
-                    src={member.avatar}
-                    alt={member.name}
-                    className="w-28 h-28 md:w-36 md:h-36 rounded-full object-cover border-[3px] border-black"
-                  />
-                  <h2 className="text-2xl md:text-3xl font-black text-black tracking-tight mt-5">
+              <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-zinc-100/80 via-transparent to-blue-500/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="relative flex flex-col gap-10 md:flex-row md:gap-14">
+                <div className="flex shrink-0 flex-col items-center md:items-start">
+                  <div className="perspective-dramatic transition-transform duration-500 group-hover:[transform:rotateY(-5deg)]">
+                    <img
+                      src={member.avatar}
+                      alt={member.name}
+                      className="h-28 w-28 rounded-full border-2 border-zinc-200 object-cover shadow-md md:h-36 md:w-36 md:border-[3px]"
+                    />
+                  </div>
+                  <h2 className="mt-5 text-2xl font-extrabold tracking-tight text-zinc-900 md:text-3xl">
                     {member.name}
                   </h2>
-                  <p className="text-[10px] md:text-xs font-bold text-black/40 uppercase tracking-widest mt-1">
+                  <p className="mt-1 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-zinc-500 md:text-xs">
                     {member.role}
                   </p>
                   <a
                     href={member.portfolio}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 text-xs font-bold uppercase tracking-widest text-black border-b-2 border-black pb-0.5 hover:text-black/60 hover:border-black/60 transition-colors"
+                    className="mt-5 text-xs font-bold uppercase tracking-[0.2em] text-blue-600 transition-colors hover:text-blue-500"
                   >
-                    Портфолио
+                    Портфолио →
                   </a>
                 </div>
 
-                <div className="flex-1 space-y-6 md:space-y-8">
-                  <p className="text-base md:text-lg font-bold text-black leading-relaxed">
+                <div className="flex-1 space-y-8">
+                  <p className="text-base font-semibold leading-relaxed text-zinc-700 md:text-lg">
                     {member.bio}
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6">
+                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-8">
                     {member.stacks.map((stack) => (
                       <div key={stack.label}>
-                        <h3 className="text-xs font-black uppercase tracking-widest text-black mb-3">
+                        <h3 className="mb-3 text-[0.65rem] font-extrabold uppercase tracking-[0.2em] text-zinc-600 md:text-xs">
                           {stack.label}
                         </h3>
                         <div className="flex flex-wrap gap-2">
                           {stack.items.map((item) => (
                             <span
                               key={item}
-                              className="text-xs font-bold text-black/60 bg-black/[0.04] px-3 py-1.5 rounded-full"
+                              className="rounded-full border border-black/[0.08] bg-zinc-100/80 px-3 py-1.5 text-xs font-semibold text-zinc-700"
                             >
                               {item}
                             </span>
@@ -121,22 +127,24 @@ export default function TeamPage() {
                       </div>
                     ))}
                   </div>
-
                 </div>
               </div>
             </article>
           ))}
         </div>
 
-        <div className="text-center border-t border-black/10 mt-16 md:mt-24 pt-10">
-          <p className="text-black/40 font-bold text-xs md:text-sm max-w-md mx-auto">
+        <div className="mt-16 border-t border-black/[0.06] pt-12 text-center md:mt-24 md:pt-14">
+          <p className="mx-auto max-w-md text-sm font-semibold text-zinc-600">
             Мы всегда рады рабочим рукам, но пока не готовы кого-то набирать
           </p>
           <Link
             href="/"
-            className="inline-block mt-6 text-xs font-bold uppercase tracking-widest text-black border-b-2 border-black pb-0.5 hover:text-black/60 hover:border-black/60 transition-colors"
+            className="group mt-8 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-zinc-600 transition-colors hover:text-zinc-900"
           >
-            На главную
+            <span className="border-b border-zinc-400 pb-0.5 transition-colors group-hover:border-zinc-900">
+              На главную
+            </span>
+            <span className="translate-x-0 transition-transform group-hover:translate-x-1">→</span>
           </Link>
         </div>
       </div>

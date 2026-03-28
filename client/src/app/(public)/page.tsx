@@ -5,7 +5,7 @@ import { TeamSection } from "@/widgets/team-section";
 export const metadata: Metadata = {
   title: "Oracle Studio — веб-разработка под ключ",
   description:
-    "Студия веб-разработки полного цикла. Создаём сайты, Telegram и Discord ботов. От идеи до продакшена.",
+    "Студия веб-разработки полного цикла. Создаём сайты, Телеграм и Дискорд ботов. От идеи до продакшена.",
   alternates: { canonical: "/" },
 };
 
@@ -14,7 +14,7 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "Oracle Studio",
   description:
-    "Студия веб-разработки полного цикла. Создаём сайты, Telegram и Discord ботов.",
+    "Студия веб-разработки полного цикла. Создаём сайты, Телеграм и Дискорд ботов.",
   url: "https://oracle-studio.ru",
   contactPoint: {
     "@type": "ContactPoint",
@@ -27,8 +27,8 @@ const jsonLd = {
     "Next.js",
     "TypeScript",
     "Go",
-    "Telegram боты",
-    "Discord боты",
+    "Телеграм боты",
+    "Дискорд боты",
   ],
   areaServed: {
     "@type": "Country",
@@ -36,8 +36,8 @@ const jsonLd = {
   },
   serviceType: [
     "Разработка сайтов",
-    "Разработка Telegram ботов",
-    "Разработка Discord ботов",
+    "Разработка Телеграм ботов",
+    "Разработка Дискорд ботов",
     "Full-stack разработка",
   ],
 };
